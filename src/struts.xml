@@ -6,17 +6,37 @@
 <struts>
     <!-- 先配置包结构和action -->
     <package name="sisshcrm" extends="struts-default" namespace="/">
+
+        <!-- 配置拦截器 -->
+        <interceptors>
+            <interceptor name="userInterceptor" class="com.david.disshcrm.web.interceptor.UserInterceptor"/>
+        </interceptors>
+        <!-- 配置全局的login -->
+        <global-results>
+            <result name="login">/struts2/demo/login.htm</result>
+        </global-results>
+
         <!-- 最初的由Struts2框架自己来管理我们的action 。-->
         <!-- 这里配置客户的action，如果action由spring框架来管理，则class标签上只需写在applicationContext中配置的action的ID值即可 -->
         <action name="customer_*" class="customerAction" method="{1}">
             <result name="login">/WEB-INF/jsp/login.jsp</result>
         </action>
-        <!--这里是用户登陆的action-->
+
+
+        <!--配置用户的模块.这里是用户登陆的action-->
         <action name="user_*" class="userAction" method="{1}">
             <result name="login">/jsp/login.jsp</result>
             <result name="index">/jsp/index.jsp</result>
+            <!-- 由于拦截器进行了拦截，所以login方法不能拦截，不然全部永远也登录不上去了 -->
+            <interceptor-ref name="userInterceptor">
+                <!-- login方法不拦截 -->
+                <param name="excludeMethods">login</param>
+            </interceptor-ref>
+            <!-- 开启默认的拦截 -->
+            <interceptor-ref name="defaultStack"/>
         </action>
     </package>
+
 </struts>
 
 

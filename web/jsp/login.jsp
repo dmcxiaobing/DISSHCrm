@@ -23,23 +23,24 @@ TD {
         if(f.txtName.value==""||f.txtName.value.replace(/\s+/,'') == '')
         {
             alert("用户名不能为空!")
-            f.mob_code.focus();
+            f.txtName.focus();
             return false;
         }
         if(f.txtPwd.value==""||f.txtPwd.value.replace(/\s+/,'') == '')
         {
             alert("密码不能为空!")
-            f.version.focus();
+            f.txtPwd.focus();
             return false;
+
         }
         if(f.txtcode.value==""||f.txtPwd.value.replace(/\s+/,'') == '')
         {
             alert("验证码不能为空!")
-            f.verinfo.focus();
+            f.txtcode.focus();
             return false;
         }
-
-        document.forms[0].submit();
+//        document.forms[0].submit();
+      return true;
     }
 </script>
 
@@ -47,7 +48,7 @@ TD {
 
 <FORM id=form1 name=form1 action="${pageContext.request.contextPath}/user_login.action" method="post" onsubmit="return checkform()">
 
-<DIV id=UpdatePanel1>
+  <DIV id=UpdatePanel1>
 <DIV id=div1 
 style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV>
 <DIV id=div2 
@@ -100,9 +101,13 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
                 <TD style="HEIGHT: 18px"></TD>
                 <TD style="HEIGHT: 18px"></TD></TR>
               <TR>
+                <p style="color: red ">${requestScope.login_error_msg}</p>
                 <TD></TD>
+                <TD>    </TD>
                 <TD>
-                
+
+
+
                 <!--  
                 	<input type="image" src=""/>
                 -->

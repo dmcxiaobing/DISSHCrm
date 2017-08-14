@@ -58,17 +58,18 @@ P {
 								</TR>
 								<TR>
 									<TD height=35 align="right">
-										当前用户：<c:choose>
+										<c:choose>
 													<c:when test="${empty sessionScope.session_user }">请登录</c:when>
 													<c:otherwise>
-														${sessionScope.session_user.username}
+														当前用户：${sessionScope.session_user.username}
+														&nbsp;&nbsp;&nbsp;&nbsp;
+														<A href="#" target=_top><FONT color=red>修改密码</FONT></A>
+														&nbsp;&nbsp;&nbsp;&nbsp;
+														<A href="#" target=_top><FONT color=red>安全退出</FONT></A>
 													</c:otherwise>
 
 												</c:choose>
-										&nbsp;&nbsp;&nbsp;&nbsp;
-										<A href="#" target=_top><FONT color=red>修改密码</FONT></A>
-										&nbsp;&nbsp;&nbsp;&nbsp;
-										<A href="#" target=_top><FONT color=red>安全退出</FONT></A>
+
 									</TD>
 								</TR>
 							</TBODY>

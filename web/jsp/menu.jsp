@@ -283,7 +283,7 @@ A.active {
 		<TABLE cellSpacing=0 cellPadding=0 width=210 align=center border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath}/source/${pageContext.request.contextPath}/source/images/new_010.jpg" border=0></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath}/source/images/new_010.jpg" border=0></TD>
 					<TD align=middle width=180 background=${pageContext.request.contextPath}/source/images/new_011.jpg
 						height=15></TD>
 					<TD width=15><IMG src="${pageContext.request.contextPath}/source/images/new_012.jpg" border=0></TD>
