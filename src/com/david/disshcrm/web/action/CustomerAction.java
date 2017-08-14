@@ -8,7 +8,6 @@ import com.david.disshcrm.service.CustomerService;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 客户的控制层

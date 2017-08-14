@@ -63,4 +63,30 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
         return LOGIN;
     }
 
+    /**
+     * 注册
+     */
+    public String regist() {
+        if (userform != null && userform.getUsername() != null && userform.getPassword() != null
+                && !userform.getUsername().trim().isEmpty()
+                && !userform.getPassword().trim().isEmpty()) {
+            //调用业务层，登陆。
+            List<User> users = userService.findUserByUserName(userform.getUsername());
+            if (users == null || users.size() < 1) {
+                //如果user等于null，则说明用户名不存在，这里写入到数据库
+                userService.regist(userform);
+                return LOGIN;
+            } else {
+                //如果用户名已经存在，则转发到注册页面，并进行提示
+                this.getRequest().put("login_error_msg", "用户名已经存在了");
+                return LOGIN;
+
+            }
+        } else {
+            this.getRequest().put("login_error_msg", "用户名或密码不能为空");
+            return LOGIN;
+        }
+    }
+
+
 }

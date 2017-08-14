@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface UserService {
     List<User> login(User formUser);
-    User regist(User formUser);
+    void regist(User formUser);
     User active(User formUser);
+
+    List findUserByUserName(String username);
 }
