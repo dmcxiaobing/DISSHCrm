@@ -11,7 +11,11 @@
         <action name="customer_*" class="customerAction" method="{1}">
             <result name="login">/WEB-INF/jsp/login.jsp</result>
         </action>
-
+        <!--这里是用户登陆的action-->
+        <action name="user_*" class="userAction" method="{1}">
+            <result name="login">/jsp/login.jsp</result>
+            <result name="index">/jsp/index.jsp</result>
+        </action>
     </package>
 </struts>
 

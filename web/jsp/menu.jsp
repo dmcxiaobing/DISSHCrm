@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD id=Head1>
 <TITLE>导航</TITLE>
@@ -104,17 +106,17 @@ A.active {
 		<TABLE cellSpacing=0 cellPadding=0 width=210 align=center border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="images/new_005.jpg" border=0></TD>
-					<TD align=middle width=180 background=images/new_006.jpg
+					<TD width=15><IMG src="${pageContext.request.contextPath}/source/images/new_005.jpg" border=0></TD>
+					<TD align=middle width=180 background="${pageContext.request.contextPath}/source/images/new_006.jpg"
 						height=35><B>人力资源 －功能菜单</B></TD>
-					<TD width=15><IMG src="images/new_007.jpg" border=0></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath}/source/images/new_007.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>
 		<TABLE cellSpacing=0 cellPadding=0 width=210 align=center border=0>
 			<TBODY>
 				<TR>
-					<TD width=15 background=images/new_008.jpg></TD>
+					<TD width=15 background="${pageContext.request.contextPath}/source/images/new_008.jpg"></TD>
 					<TD vAlign=top width=180 bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=3 width=165 align=center border=0>
 							<TBODY>
@@ -166,7 +168,7 @@ A.active {
 									</TD>
 								</TR>
 								<TR>
-									<TD background=images/new_027.jpg height=1></TD>
+									<TD background=${pageContext.request.contextPath}/source/images/new_027.jpg height=1></TD>
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_5');"><SPAN
@@ -191,7 +193,7 @@ A.active {
 									</TD>
 								</TR>
 								<TR>
-									<TD background=images/new_027.jpg height=1></TD>
+									<TD background=${pageContext.request.contextPath}/source/images/new_027.jpg height=1></TD>
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_3');"><SPAN
@@ -219,7 +221,7 @@ A.active {
 									</TD>
 								</TR>
 								<TR>
-									<TD background=images/new_027.jpg height=1></TD>
+									<TD background=${pageContext.request.contextPath}/source/images/new_027.jpg height=1></TD>
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_4');"><SPAN
@@ -244,7 +246,7 @@ A.active {
 									</TD>
 								</TR>
 								<TR>
-									<TD background=images/new_027.jpg height=1></TD>
+									<TD background=${pageContext.request.contextPath}/source/images/new_027.jpg height=1></TD>
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_6');"><SPAN
@@ -274,17 +276,17 @@ A.active {
 							</TBODY>
 						</TABLE>
 					</TD>
-					<TD width=15 background=images/new_009.jpg></TD>
+					<TD width=15 background=${pageContext.request.contextPath}/source/images/new_009.jpg></TD>
 				</TR>
 			</TBODY>
 		</TABLE>
 		<TABLE cellSpacing=0 cellPadding=0 width=210 align=center border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="images/new_010.jpg" border=0></TD>
-					<TD align=middle width=180 background=images/new_011.jpg
+					<TD width=15><IMG src="${pageContext.request.contextPath}/source/${pageContext.request.contextPath}/source/images/new_010.jpg" border=0></TD>
+					<TD align=middle width=180 background=${pageContext.request.contextPath}/source/images/new_011.jpg
 						height=15></TD>
-					<TD width=15><IMG src="images/new_012.jpg" border=0></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath}/source/images/new_012.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>

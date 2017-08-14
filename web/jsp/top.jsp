@@ -1,4 +1,7 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD id=Head1>
 <TITLE>顶部</TITLE>
@@ -45,9 +48,9 @@ P {
 		<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=10><IMG src="images/new_001.jpg" border=0></TD>
-					<TD background=images/new_002.jpg><FONT size=5><B>客户关系管理系统v1.0</B></FONT></TD>
-					<TD background=images/new_002.jpg>
+					<TD width=10><IMG src="${pageContext.request.contextPath}/source/images/new_001.jpg" border=0></TD>
+					<TD background=${pageContext.request.contextPath}/source/images/new_002.jpg><FONT size=5><B>客户关系管理系统v1.0</B></FONT></TD>
+					<TD background=${pageContext.request.contextPath}/source/images/new_002.jpg>
 						<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
 							<TBODY>
 								<TR>
@@ -55,7 +58,13 @@ P {
 								</TR>
 								<TR>
 									<TD height=35 align="right">
-										当前用户：XXXX
+										当前用户：<c:choose>
+													<c:when test="${empty sessionScope.session_user }">请登录</c:when>
+													<c:otherwise>
+														${sessionScope.session_user.username}
+													</c:otherwise>
+
+												</c:choose>
 										&nbsp;&nbsp;&nbsp;&nbsp;
 										<A href="#" target=_top><FONT color=red>修改密码</FONT></A>
 										&nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,7 +74,7 @@ P {
 							</TBODY>
 						</TABLE>
 					</TD>
-					<TD width=10><IMG src="images/new_003.jpg" border=0></TD>
+					<TD width=10><IMG src="${pageContext.request.contextPath}/source/images/new_003.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>

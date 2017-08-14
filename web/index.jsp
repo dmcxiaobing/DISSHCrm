@@ -17,7 +17,7 @@
     <meta http-equiv="description" content="This is my page">
     <%--跳转到login的页面--%>
     <script type="text/javascript">
-        window.location.href = "customer_login";		//javascript页面跳转
+        window.location.href = "user_login";		//javascript页面跳转
     </script>
 </head>
 </html>

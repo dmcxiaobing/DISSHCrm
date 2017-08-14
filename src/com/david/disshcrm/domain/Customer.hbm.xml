@@ -7,7 +7,7 @@
 	
 	<class name="com.david.disshcrm.domain.Customer" table="cst_customer">
 		<id name="cust_id" column="cust_id">
-			<generator class="native"/>
+			<generator class="uuid"/>
 		</id>
 		
 		<property name="cust_name" column="cust_name"/>

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
 <META http-equiv=Content-Type content="text/html; charset=utf-8">
@@ -43,7 +45,7 @@ TD {
 
 <BODY>
 
-<FORM id=form1 name=form1 action="${pageContext.request.contextPath}/customer_login.action" method="post" onsubmit="return checkform()">
+<FORM id=form1 name=form1 action="${pageContext.request.contextPath}/user_login.action" method="post" onsubmit="return checkform()">
 
 <DIV id=UpdatePanel1>
 <DIV id=div1 
@@ -88,11 +90,11 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
                 
                 <TD style="HEIGHT: 28px"><SPAN id=RequiredFieldValidator4 
                   style="FONT-WEIGHT: bold; VISIBILITY: hidden; COLOR: white">请输入密码</SPAN></TD></TR>
-              <TR>
+             <%-- <TR>
                 <TD style="HEIGHT: 28px">验证码：</TD>
                 <TD style="HEIGHT: 28px"><INPUT id=txtcode 
                   style="WIDTH: 130px" name=txtcode></TD>
-                <TD style="HEIGHT: 28px">&nbsp;</TD></TR>
+                <TD style="HEIGHT: 28px">&nbsp;</TD></TR>--%>
               <TR>
                 <TD style="HEIGHT: 18px"></TD>
                 <TD style="HEIGHT: 18px"></TD>

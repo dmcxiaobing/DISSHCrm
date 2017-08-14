@@ -1,6 +1,7 @@
 package com.david.disshcrm.service;
 
 import com.david.disshcrm.domain.Customer;
+import com.david.disshcrm.domain.User;
 
 import java.util.List;
 
@@ -18,5 +19,5 @@ public void save(Customer customer);
 	public List<Customer> findAllByQBC();
 
 	public Customer loadById(long id);
-	
+
 }

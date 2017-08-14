@@ -1,10 +1,14 @@
 package com.david.disshcrm.web.action;
 
+import com.david.disshcrm.common.utils.CommonUtils;
+import com.david.disshcrm.common.web.action.BaseAction;
 import com.david.disshcrm.domain.Customer;
+import com.david.disshcrm.domain.User;
 import com.david.disshcrm.service.CustomerService;
-import com.david.disshcrm.utils.LogUtils;
-import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import org.apache.struts2.ServletActionContext;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * 客户的控制层
@@ -13,7 +17,7 @@ import com.opensymphony.xwork2.ModelDriven;
  * @新浪微博 ：http://weibo.com/mcxiaobing
  * @GitHub: https://github.com/QQ986945193
  */
-public class CustomerAction extends ActionSupport implements ModelDriven<Customer> {
+public class CustomerAction extends BaseAction implements ModelDriven<Customer> {
     //得到service
     private CustomerService customerService;
 
@@ -28,7 +32,6 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         return customer;
     }
 
-
     /**
      * 添加用户，保存的方法
      */
@@ -38,13 +41,7 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
     }
 
 
-    /**
-     * 登陆的方法
-     */
-    public String login() {
-        LogUtils.e("login");
-        return LOGIN;
-    }
+
 
 
 }

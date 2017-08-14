@@ -4,13 +4,13 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
-	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 	<!-- spring-beans-4.0 spring-beans-->
 	<!-- 	<session-factory>
@@ -34,12 +34,15 @@
 		
 	</session-factory>
 	 -->
+	<!--加载db配置文件-->
+	<!-- 加载配置文件 -->
+	<context:property-placeholder location="classpath:db.properties" />
 	<!-- 先配置C3P0的连接池 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="com.mysql.jdbc.Driver"/>
-		<property name="jdbcUrl" value="jdbc:mysql:///sshtools"/>
-		<property name="user" value="root"/>
-		<property name="password" value="1234"/>
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
 	</bean>
 	<!-- LocalSessionFactoryBean加载配置文件 -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
@@ -54,12 +57,20 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
-		<!-- 引入配置文件 -->
+		<!-- 引入配置文件 利用xml的方式进行配置-->
 		<property name="mappingResources">
 			<list>
+				<!--<value>com/david/disshcrm/domain/Customer.hbm.xml</value>-->
 				<value>com/david/disshcrm/domain/Customer.hbm.xml</value>
+				<value>com/david/disshcrm/domain/User.hbm.xml</value>
 			</list>
 		</property>
+		<!--javabean的方式进行扫描-->
+		<!--<property name="packagesToScan">
+			<list>
+				<value >com.david.disshcrm.domain</value>
+			</list>
+		</property>-->
 	</bean>
 	
 	<!-- 配置我们的平台事务管理器 -->
@@ -74,9 +85,13 @@
 
 	<!--配置客户模块  -->
 	<!-- 注意：以后配置action，必须是多例的 -->
-	<!-- action中依赖service，所以这里配置进去service -->
+	<!-- action中依赖service，所以这里配置进去service 。这里是客户的action-->
 	<bean id="customerAction" class="com.david.disshcrm.web.action.CustomerAction" scope="prototype">
 		<property name="customerService" ref="customerService"/>
+	</bean>
+	<!--用户登陆的action-->
+	<bean id="userAction" class="com.david.disshcrm.web.action.UserAction" scope="prototype">
+		<property name="userService" ref="userService"/>
 	</bean>
 
 
@@ -84,6 +99,10 @@
 	<!-- 配置service ，依赖dao，所以映射进去dao-->
 	<bean id="customerService" class="com.david.disshcrm.service.impl.CustomerServiceImpl">
 		<property name="customerDao" ref="customerDao"/>
+		<property name="baseDao" ref="baseDao"/>
+	</bean>
+	<bean id="userService" class="com.david.disshcrm.service.impl.UserServiceImpl">
+		<property name="baseDao" ref="baseDao"/>
 	</bean>
 
 
@@ -92,6 +111,18 @@
 	<bean id="customerDao" class="com.david.disshcrm.dao.impl.CustomerDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+
+<!--	<bean id="sqlDao" class="com.david.disshcrm.common.dao.SqlDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>-->
+
+	<bean id="baseDao" class="com.david.disshcrm.dao.impl.BaseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+
+
 </beans>
 
 

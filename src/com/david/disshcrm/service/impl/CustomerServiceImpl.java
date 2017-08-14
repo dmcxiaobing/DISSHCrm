@@ -2,8 +2,10 @@ package com.david.disshcrm.service.impl;
 
 import java.util.List;
 
+import com.david.disshcrm.common.dao.BaseDao;
 import com.david.disshcrm.dao.CustomerDao;
 import com.david.disshcrm.domain.Customer;
+import com.david.disshcrm.domain.User;
 import com.david.disshcrm.service.CustomerService;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional//开启事务管理
 public class CustomerServiceImpl implements CustomerService {
 	private CustomerDao customerDao;
-	
+	private BaseDao baseDao;
+
+	public void setBaseDao(BaseDao baseDao) {
+		this.baseDao = baseDao;
+	}
+
 	public void setCustomerDao(CustomerDao customerDao) {
 		this.customerDao = customerDao;
 	}

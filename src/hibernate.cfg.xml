@@ -1,12 +1,13 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- <!DOCTYPE hibernate-configuration PUBLIC
+ <!DOCTYPE hibernate-configuration PUBLIC
 	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-	由于ssh整合了，所以hibernate全部交给spring管理了
+	&lt;!&ndash;由于ssh整合了，所以hibernate全部交给spring管理了&ndash;&gt;
 <hibernate-configuration>
 	
 	<session-factory>
-		必须配置
+	&lt;!&ndash;	必须配置
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql:///sshtools</property>
 		<property name="hibernate.connection.username">root</property>
@@ -21,9 +22,9 @@
 		配置C3P0的连接池
 		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
 		
-		映射配置文件
+		映射配置文件&ndash;&gt;
 		
 		
 	</session-factory>
-	
-</hibernate-configuration>	 -->
+
+</hibernate-configuration>	-->
