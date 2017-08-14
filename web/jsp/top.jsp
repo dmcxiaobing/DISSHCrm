@@ -49,7 +49,7 @@ P {
 			<TBODY>
 				<TR>
 					<TD width=10><IMG src="${pageContext.request.contextPath}/source/images/new_001.jpg" border=0></TD>
-					<TD background=${pageContext.request.contextPath}/source/images/new_002.jpg><FONT size=5><B>客户关系管理系统v1.0</B></FONT></TD>
+					<TD background=${pageContext.request.contextPath}/source/images/new_002.jpg><FONT size=5><B>程序员小冰客户关系管理系统v1.0</B></FONT></TD>
 					<TD background=${pageContext.request.contextPath}/source/images/new_002.jpg>
 						<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
 							<TBODY>
@@ -63,9 +63,9 @@ P {
 													<c:otherwise>
 														当前用户：${sessionScope.session_user.username}
 														&nbsp;&nbsp;&nbsp;&nbsp;
-														<A href="#" target=_top><FONT color=red>修改密码</FONT></A>
+														<%--<A href="#" target=_top><FONT color=red>修改密码</FONT></A>--%>
 														&nbsp;&nbsp;&nbsp;&nbsp;
-														<A href="#" target=_top><FONT color=red>安全退出</FONT></A>
+														<A href="${pageContext.request.contextPath}/user_logout.action" target=_top><FONT color=red>安全退出</FONT></A>
 													</c:otherwise>
 
 												</c:choose>
