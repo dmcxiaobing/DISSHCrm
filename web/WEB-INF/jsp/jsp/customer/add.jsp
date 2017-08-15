@@ -15,18 +15,18 @@
 </HEAD>
 <BODY>
 	<FORM id=form1 name=form1
-		action="${pageContext.request.contextPath }/customerServlet?method=addsubmit"
+		action="${pageContext.request.contextPath }/customer_add.action"
 		method=post>
 		
 
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_019.jpg"
 						border=0></TD>
-					<TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
+					<TD width="100%" background="${pageContext.request.contextPath }/source/images/new_020.jpg"
 						height=20></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_021.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>
@@ -34,8 +34,8 @@
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15 background=${pageContext.request.contextPath }/images/new_022.jpg><IMG
-						src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
+					<TD width=15 background=${pageContext.request.contextPath }/source/images/new_022.jpg><IMG
+						src="${pageContext.request.contextPath }/source/images/new_022.jpg" border=0></TD>
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
@@ -53,12 +53,12 @@
 								<td>客户名称：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custName">
+														style="WIDTH: 180px" maxLength=50 name="cust_name">
 								</td>
 								<td>客户级别 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custLevel">
+														style="WIDTH: 180px" maxLength=50 name="cust_level">
 								</td>
 							</TR>
 							
@@ -67,12 +67,12 @@
 								<td>信息来源 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custSource">
+														style="WIDTH: 180px" maxLength=50 name="cust_source">
 								</td>
 								<td>联系人：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custLinkman">
+														style="WIDTH: 180px" maxLength=50 name="cust_linkman">
 								</td>
 							</TR>
 							
@@ -82,12 +82,12 @@
 								<td>固定电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custPhone">
+														style="WIDTH: 180px" maxLength=50 name="cust_phone">
 								</td>
 								<td>移动电话 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custMobile">
+														style="WIDTH: 180px" maxLength=50 name="cust_mobile">
 								</td>
 							</TR>
 							
@@ -95,24 +95,24 @@
 								<td>联系地址 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custAddress">
+														style="WIDTH: 180px" maxLength=50 name="cust_address">
 								</td>
 								<td>邮政编码 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custZip">
+														style="WIDTH: 180px" maxLength=50 name="cust_number">
 								</td>
 							</TR>
 							<TR>
 								<td>客户传真 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custFax">
+														style="WIDTH: 180px" maxLength=50 name="cust_fx">
 								</td>
 								<td>客户网址 ：</td>
 								<td>
 								<INPUT class=textbox id=sChannel2
-														style="WIDTH: 180px" maxLength=50 name="custWebsite">
+														style="WIDTH: 180px" maxLength=50 name="cust_website">
 								</td>
 							</TR>
 							<tr>
@@ -125,19 +125,19 @@
 						
 						
 					</TD>
-					<TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg">
-					<IMG src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
+					<TD width=15 background="${pageContext.request.contextPath }/source/images/new_023.jpg">
+					<IMG src="${pageContext.request.contextPath }/source/images/new_023.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_024.jpg"
 						border=0></TD>
 					<TD align=middle width="100%"
-						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
+						background="${pageContext.request.contextPath }/source/images/new_025.jpg" height=15></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_026.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>

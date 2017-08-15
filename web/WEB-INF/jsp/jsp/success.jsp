@@ -17,11 +17,11 @@
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_019.jpg"
 						border=0></TD>
-					<TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
+					<TD width="100%" background="${pageContext.request.contextPath }/source/images/new_020.jpg"
 						height=20></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_021.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>
@@ -29,33 +29,33 @@
 	<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 		<TBODY>
 			<tr>
-				<TD width=15 background=images/new_022.jpg><IMG
-					src="images/new_022.jpg" border=0></TD>
+				<TD width=15 background=${pageContext.request.contextPath }/source/images/new_022.jpg><IMG
+					src="${pageContext.request.contextPath }/source/images/new_022.jpg" border=0></TD>
 				<TD align="center" bgColor=#ffffff>
 					<table width="100%" height=200 border="0" cellpadding="0"
 						cellspacing="0">
 						<tr>
 							<td align="center" style="font-size: 14px;"><img
-								src="${pageContext.request.contextPath }/images/yes.png"
+								src="${pageContext.request.contextPath }/source/images/yes.png"
 								align="middle" height="30" width="30" />
 							    <span style="vertical-align: middle">您的操作成功！</span>	
 							</td>
 						</tr>
 					</table>
 				</td>
-				<TD width=15 background=images/new_023.jpg><IMG
-					src="images/new_023.jpg" border=0></TD>
+				<TD width=15 background=${pageContext.request.contextPath }/source/images/new_023.jpg><IMG
+					src="${pageContext.request.contextPath }/source/images/new_023.jpg" border=0></TD>
 			</tr>
 		</TBODY>
 	</table>
 	<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_024.jpg"
 						border=0></TD>
 					<TD align=middle width="100%"
-						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
+						background="${pageContext.request.contextPath }/source/images/new_025.jpg" height=15></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_026.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>

@@ -1,23 +1,17 @@
 package com.david.disshcrm.service;
 
 import com.david.disshcrm.domain.Customer;
-import com.david.disshcrm.domain.User;
 
 import java.util.List;
 
 
 
 public interface CustomerService {
-public void save(Customer customer);
-	
-	public void update(Customer customer);
-	
-	public Customer getById(Long id);
-	
-	public List<Customer> findAll();
-	
-	public List<Customer> findAllByQBC();
+	 void save(Customer customer);
 
-	public Customer loadById(long id);
+    void delete(Customer customer);
 
+	List<Customer> findCustomerById(String cust_id);
+
+    List<Customer> findAll();
 }

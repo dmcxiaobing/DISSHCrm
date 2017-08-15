@@ -15,11 +15,13 @@ public interface CustomerDao {
 
 	public void update(Customer customer);
 
-	public Customer getById(Long id);
+	public Customer getById(String id);
 
 	public List<Customer> findAll();
 
 	public List<Customer> findAllByQBC();
 
-	public Customer loadById(long id);
+	public Customer loadById(String id);
+
+    void delete(Customer customer);
 }

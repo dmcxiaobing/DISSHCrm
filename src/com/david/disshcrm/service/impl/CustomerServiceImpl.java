@@ -34,24 +34,31 @@ public class CustomerServiceImpl implements CustomerService {
 		customerDao.save(customer);
 	}
 
-	public void update(Customer customer) {
-		customerDao.update(customer);
+
+	/**
+	 * 根据UUID删除客户
+	 */
+	@Override
+	public void delete(Customer customer) {
+		customerDao.delete(customer);
 	}
 
-	public Customer getById(Long id) {
-		return customerDao.getById(id);
+	/**
+	 * 根据ID查找客户
+	 * @param cust_id
+	 */
+	@Override
+	public List<Customer> findCustomerById(String cust_id) {
+		Object[] params = {cust_id};
+		return baseDao.find("from Customer where cust_id = ?",Customer.class,params);
 	}
 
+	/**
+	 * 查询所有客户
+	 */
+	@Override
 	public List<Customer> findAll() {
-		return customerDao.findAll();
-	}
-
-	public List<Customer> findAllByQBC() {
-		return customerDao.findAllByQBC();
-	}
-
-	public Customer loadById(long id) {
-		return customerDao.loadById(id);
+		return baseDao.find("from Customer",Customer.class,null);
 	}
 
 }

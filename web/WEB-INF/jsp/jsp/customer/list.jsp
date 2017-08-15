@@ -30,11 +30,11 @@
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_019.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_019.jpg"
 						border=0></TD>
-					<TD width="100%" background="${pageContext.request.contextPath }/images/new_020.jpg"
+					<TD width="100%" background="${pageContext.request.contextPath }/source/images/new_020.jpg"
 						height=20></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_021.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_021.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>
@@ -42,8 +42,8 @@
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15 background=${pageContext.request.contextPath }/images/new_022.jpg><IMG
-						src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
+					<TD width=15 background=${pageContext.request.contextPath }/source/images/new_022.jpg><IMG
+						src="${pageContext.request.contextPath }/source/images/new_022.jpg" border=0></TD>
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
@@ -92,16 +92,16 @@
 												<c:forEach items="${list }" var="customer">
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-													<TD>${customer.custName }</TD>
-													<TD>${customer.custLevel }</TD>
-													<TD>${customer.custSource }</TD>
-													<TD>${customer.custLinkman }</TD>
-													<TD>${customer.custPhone }</TD>
-													<TD>${customer.custMobile }</TD>
+													<TD>${customer.cust_name }</TD>
+													<TD>${customer.cust_level }</TD>
+													<TD>${customer.cust_source }</TD>
+													<TD>${customer.cust_linkman }</TD>
+													<TD>${customer.cust_phone }</TD>
+													<TD>${customer.cust_mobile }</TD>
 													<TD>
-													<a href="${pageContext.request.contextPath }/customerServlet?method=edit&custId=${customer.custId}">修改</a>
+													<a href="${pageContext.request.contextPath }/customer_edit.action?cust_id=${customer.cust_id}">修改</a>
 													&nbsp;&nbsp;
-													<a href="${pageContext.request.contextPath }/customerServlet?method=delete&custId=${customer.custId}">删除</a>
+													<a href="${pageContext.request.contextPath }/customer_delete.action?cust_id=${customer.cust_id}">删除</a>
 													</TD>
 												</TR>
 												
@@ -138,19 +138,19 @@
 							</TBODY>
 						</TABLE>
 					</TD>
-					<TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg"><IMG
-						src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
+					<TD width=15 background="${pageContext.request.contextPath }/source/images/new_023.jpg"><IMG
+						src="${pageContext.request.contextPath }/source/images/new_023.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_024.jpg"
 						border=0></TD>
 					<TD align=middle width="100%"
-						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
-					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
+						background="${pageContext.request.contextPath }/source/images/new_025.jpg" height=15></TD>
+					<TD width=15><IMG src="${pageContext.request.contextPath }/source/images/new_026.jpg"
 						border=0></TD>
 				</TR>
 			</TBODY>

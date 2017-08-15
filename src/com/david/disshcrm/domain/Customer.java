@@ -16,7 +16,7 @@ public class Customer {
 create TABLE cst_customer (cust_id bigint(32) NOT NULL AUTO_INCREMENT COMMENT '客户编号(主键)',
 		  cust_name varchar(32) NOT NULL COMMENT '客户名称(公司名称)',
 		  cust_user_id bigint(32) DEFAULT NULL COMMENT '负责人id',
-		  cust_create_id bigint(32) DEFAULT NULL COMMENT '创建人id',
+		  cust_create_id bigint(32) DEFAULT NULL COMMENT '创建人id',客户来源
 		  cust_source varchar(32) DEFAULT NULL COMMENT '客户信息来源',
 		  cust_industry varchar(32) DEFAULT NULL COMMENT '客户所属行业',
 		  cust_level varchar(32) DEFAULT NULL COMMENT '客户级别',
@@ -29,8 +29,44 @@ create TABLE cst_customer (cust_id bigint(32) NOT NULL AUTO_INCREMENT COMMENT '�
 	/**
 	 * 用包装类，默认是null
 	 */
-	
-	private Long cust_id;
+	private String cust_address;//客户地址
+	private String cust_number;//客户邮政编码
+	private String cust_fx;//客户传真
+	private String cust_website;//客户网址
+
+	public String getCust_address() {
+		return cust_address;
+	}
+
+	public void setCust_address(String cust_address) {
+		this.cust_address = cust_address;
+	}
+
+	public String getCust_number() {
+		return cust_number;
+	}
+
+	public void setCust_number(String cust_number) {
+		this.cust_number = cust_number;
+	}
+
+	public String getCust_fx() {
+		return cust_fx;
+	}
+
+	public void setCust_fx(String cust_fx) {
+		this.cust_fx = cust_fx;
+	}
+
+	public String getCust_website() {
+		return cust_website;
+	}
+
+	public void setCust_website(String cust_website) {
+		this.cust_website = cust_website;
+	}
+
+	private String cust_id;
 	private String cust_name;
 	private Long cust_user_id;
 	private Long cust_create_id;
@@ -40,6 +76,7 @@ create TABLE cst_customer (cust_id bigint(32) NOT NULL AUTO_INCREMENT COMMENT '�
 	private String cust_linkman;
 	private String cust_phone;
 	private String cust_mobile;
+
 	@Override
 	public String toString() {
 		return "Customer [cust_id=" + cust_id + ", cust_name=" + cust_name + ", cust_user_id=" + cust_user_id
@@ -47,10 +84,10 @@ create TABLE cst_customer (cust_id bigint(32) NOT NULL AUTO_INCREMENT COMMENT '�
 				+ cust_industry + ", cust_level=" + cust_level + ", cust_linkman=" + cust_linkman + ", cust_phone="
 				+ cust_phone + ", cust_mobile=" + cust_mobile + "]";
 	}
-	public Long getCust_id() {
+	public String getCust_id() {
 		return cust_id;
 	}
-	public void setCust_id(Long cust_id) {
+	public void setCust_id(String cust_id) {
 		this.cust_id = cust_id;
 	}
 	public String getCust_name() {

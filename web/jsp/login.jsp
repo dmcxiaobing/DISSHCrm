@@ -46,7 +46,7 @@ TD {
 
 <BODY>
 
-<FORM id=form1 name=form1 action="${pageContext.request.contextPath}/user_login.action" method="post" onsubmit="return checkform()">
+<FORM id=form1 name=form1 action="${pageContext.request.contextPath}/user_login.action" method="post" onsubmit="return checkform()" target="_parent">
 
   <DIV id=UpdatePanel1>
 <DIV id=div1 

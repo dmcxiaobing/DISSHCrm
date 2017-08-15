@@ -28,7 +28,7 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	/**
 	 * 通过主键查询
 	 */
-	public Customer getById(Long id) {
+	public Customer getById(String id) {
 		return this.getHibernateTemplate().get(Customer.class, id);
 	}
 	/**
@@ -41,14 +41,22 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	 * 查询所有的数据，使用QBC的查询
 	 */
 	public List<Customer> findAllByQBC() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 	/**
 	 * 演示延迟加载
 	 */
-	public Customer loadById(long id) {
+	public Customer loadById(String id) {
 		return this.getHibernateTemplate().load(Customer.class, id);
+	}
+
+	/**
+	 * 通过UUID删除用户
+	 */
+	@Override
+	public void delete(Customer customer) {
+		this.getHibernateTemplate().delete(customer);
 	}
 
 }

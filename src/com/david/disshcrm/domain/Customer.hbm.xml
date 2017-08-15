@@ -19,7 +19,9 @@
 		<property name="cust_linkman" column="cust_linkman"/>
 		<property name="cust_phone" column="cust_phone"/>
 		<property name="cust_mobile" column="cust_mobile"/>
-		
+		<property name="cust_address" column="cust_address"/>
+		<property name="cust_number" column="cust_number"/>
+		<property name="cust_fx" column="cust_fx"/>
+		<property name="cust_website" column="cust_website"/>
 	</class>
-	
-</hibernate-mapping>    
+</hibernate-mapping>

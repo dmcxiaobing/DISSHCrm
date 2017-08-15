@@ -59,7 +59,7 @@ P {
 								<TR>
 									<TD height=35 align="right">
 										<c:choose>
-													<c:when test="${empty sessionScope.session_user }">请登录</c:when>
+													<c:when test="${empty sessionScope.session_user }">	<A href="${pageContext.request.contextPath}/jsp/login.jsp" target=_top><FONT color=red>请登录</FONT></A></c:when>
 													<c:otherwise>
 														当前用户：${sessionScope.session_user.username}
 														&nbsp;&nbsp;&nbsp;&nbsp;
