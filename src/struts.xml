@@ -32,6 +32,7 @@
             <result name="prepareAdd">/WEB-INF/jsp/jsp/customer/add.jsp</result>
             <result name="prepareList">/WEB-INF/jsp/jsp/customer/list.jsp</result>
             <result name="edit">/WEB-INF/jsp/jsp/customer/edit.jsp</result>
+            <result name="saveUpdate"></result>
 
         </action>
 

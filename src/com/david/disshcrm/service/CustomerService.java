@@ -14,4 +14,6 @@ public interface CustomerService {
 	List<Customer> findCustomerById(String cust_id);
 
     List<Customer> findAll();
+
+    void saveUpdate(Customer customer);
 }

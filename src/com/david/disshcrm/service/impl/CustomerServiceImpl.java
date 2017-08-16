@@ -61,4 +61,9 @@ public class CustomerServiceImpl implements CustomerService {
 		return baseDao.find("from Customer",Customer.class,null);
 	}
 
+	@Override
+	public void saveUpdate(Customer customer) {
+		baseDao.saveOrUpdate(customer);
+	}
+
 }

@@ -76,6 +76,19 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer> 
             return ERROR;
         }
     }
+
+    /**
+     * 编辑用户 保存更改
+     */
+    public String saveUpdate() {
+        try {
+            customerService.saveUpdate(customer);
+            return SUCCESS;
+        } catch (Exception e) {
+            return ERROR;
+        }
+    }
+
     /**
      * 删除用户
      */
