@@ -24,4 +24,11 @@ public interface CustomerDao {
 	public Customer loadById(String id);
 
     void delete(Customer customer);
+
+	List<Customer> findAllByCustomerName(String cust_name);
+
+	Integer findTotalSize();
+	Integer findTotalPage(String pageSize);
+
+	List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize);
 }

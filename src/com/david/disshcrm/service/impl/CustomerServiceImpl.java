@@ -5,8 +5,9 @@ import java.util.List;
 import com.david.disshcrm.common.dao.BaseDao;
 import com.david.disshcrm.dao.CustomerDao;
 import com.david.disshcrm.domain.Customer;
-import com.david.disshcrm.domain.User;
+import com.david.disshcrm.domain.PageBean;
 import com.david.disshcrm.service.CustomerService;
+import com.david.disshcrm.utils.LogUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -58,12 +59,46 @@ public class CustomerServiceImpl implements CustomerService {
 	 */
 	@Override
 	public List<Customer> findAll() {
-		return baseDao.find("from Customer",Customer.class,null);
+//		return baseDao.find("from Customer",Customer.class,null);
+		return customerDao.findAll();
+	}
+
+	/**
+	 * 分页查询并筛选内容。查询所有的客户
+	 */
+	@Override
+	public List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize) {
+
+		return customerDao.findAllByInputValueLikePage(inputCustNameValue,inputPageSize);
 	}
 
 	@Override
 	public void saveUpdate(Customer customer) {
 		baseDao.saveOrUpdate(customer);
+	}
+
+	/**
+	 * 根据客户名称模糊查询
+	 */
+	@Override
+	public List<Customer> findByCustomerName(String cust_name) {
+
+		return customerDao.findAllByCustomerName(cust_name);
+	}
+
+	/**
+	 * 得到pagebean的一些值。比如总页码，总记录数
+	 * @param inputPageSize
+	 */
+	@Override
+	public PageBean getPageBean(String inputPageSize) {
+		PageBean pageBean = new PageBean();
+		//设置总记录数
+		pageBean.setTotalSize(customerDao.findTotalSize());
+		LogUtils.e("customerDao.findTotalSize()"+customerDao.findTotalSize());
+		LogUtils.e("customerDao.findTotalPage"+customerDao.findTotalPage(""));
+		pageBean.setTotalPage(customerDao.findTotalPage(inputPageSize));
+		return pageBean;
 	}
 
 }

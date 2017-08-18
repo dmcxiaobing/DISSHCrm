@@ -3,11 +3,15 @@ package com.david.disshcrm.common.web.action;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 //通过RequestAware, SessionAware, ApplicationAware实行接口获得request,session,application对象，action中就可直接调用
@@ -46,6 +50,14 @@ public class BaseAction extends ActionSupport implements RequestAware, SessionAw
 	@Override
 	public void setApplication(Map<String, Object> application) {
 		this.application = application;
+	}
+
+	public HttpServletRequest getHttpServletRequest(){
+		return ServletActionContext.getRequest();
+	}
+
+	public HttpServletResponse getHttpServletResponse(){
+		return ServletActionContext.getResponse();
 	}
 
 }

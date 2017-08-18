@@ -5,6 +5,8 @@ import com.david.disshcrm.common.web.action.BaseAction;
 import com.david.disshcrm.domain.Customer;
 import com.david.disshcrm.domain.User;
 import com.david.disshcrm.service.CustomerService;
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 import org.apache.struts2.ServletActionContext;
 
@@ -43,8 +45,14 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer> 
      * 客户列表，这里运用转发的功能，jsp不被直接访问。
      */
     public String prepareList() {
-        List<Customer> customers = customerService.findAll();
+        //得到用户筛选输入的内容
+        String inputCustNameValue = super.getHttpServletRequest().getParameter("cust_name");
+        String inputPageSize = super.getHttpServletRequest().getParameter("pageSize");
+        List<Customer> customers = customerService.findAllByInputValueLikePage(inputCustNameValue,inputPageSize);
+        //将列表数据转发到list.jsp中
         this.request.put("list",customers);
+        this.request.put("pageBean",customerService.getPageBean(inputPageSize));
+//        super.getHttpServletRequest().setAttribute("pageBean",customerService.getPageBean(inputPageSize));
         return "prepareList";
     }
 
@@ -99,6 +107,15 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer> 
         } catch (Exception e) {
             return ERROR;
         }
+    }
+
+    /**
+     * 根据名称进行模糊查询
+     */
+    public String findByName(){
+        List<Customer> customers = customerService.findByCustomerName(customer.getCust_name());
+        this.request.put("list",customers);
+        return "prepareList";
     }
 
 
