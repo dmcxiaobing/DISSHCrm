@@ -30,5 +30,5 @@ public interface CustomerDao {
 	Integer findTotalSize();
 	Integer findTotalPage(String pageSize);
 
-	List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize);
+	List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize, String inputCurrentPage);
 }

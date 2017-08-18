@@ -7,7 +7,6 @@ import com.david.disshcrm.dao.CustomerDao;
 import com.david.disshcrm.domain.Customer;
 import com.david.disshcrm.domain.PageBean;
 import com.david.disshcrm.service.CustomerService;
-import com.david.disshcrm.utils.LogUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -67,9 +66,9 @@ public class CustomerServiceImpl implements CustomerService {
 	 * 分页查询并筛选内容。查询所有的客户
 	 */
 	@Override
-	public List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize) {
+	public List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize, String inputCurrentPage) {
 
-		return customerDao.findAllByInputValueLikePage(inputCustNameValue,inputPageSize);
+		return customerDao.findAllByInputValueLikePage(inputCustNameValue,inputPageSize,inputCurrentPage);
 	}
 
 	@Override
@@ -95,8 +94,6 @@ public class CustomerServiceImpl implements CustomerService {
 		PageBean pageBean = new PageBean();
 		//设置总记录数
 		pageBean.setTotalSize(customerDao.findTotalSize());
-		LogUtils.e("customerDao.findTotalSize()"+customerDao.findTotalSize());
-		LogUtils.e("customerDao.findTotalPage"+customerDao.findTotalPage(""));
 		pageBean.setTotalPage(customerDao.findTotalPage(inputPageSize));
 		return pageBean;
 	}

@@ -1,15 +1,17 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+﻿<%@ page import="com.david.disshcrm.domain.PageBean" %>
+<%@ page import="com.david.disshcrm.utils.LogUtils" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <TITLE>客户列表</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
-<LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
+<LINK href="${pageContext.request.contextPath }/source/css/Style.css" type=text/css rel=stylesheet>
+<LINK href="${pageContext.request.contextPath }/source/css/Manage.css" type=text/css
 	rel=stylesheet>
-<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/source/js/jquery-1.4.4.min.js"></script>
 <SCRIPT language=javascript>
 	function to_page(page){
 		if(page){
@@ -117,11 +119,27 @@
 											<DIV
 												style="LINE-HEIGHT: 20px; HEIGHT: 20px; TEXT-ALIGN: right">
 <%--${pageBean.totalPage}--%>
-												共[<B>${pageBean.totalSize}</B>]条记录,[<B></B>]页
+
+											<%--	<%
+
+
+													// 总记录数 除以每页记录数
+													PageBean pageBean = (PageBean) request.getAttribute("pageBean");
+//													;
+//													int tp = pageBean.getTotalSize() / pageBean.getPageSize();
+//													tp = totalSize % pageSize == 0 ? tp : tp + 1;
+//
+										System.out.print(pageBean);
+										System.out.print(pageBean.getTotalPage());
+										<%=pageBean.getTotalPage()%>
+
+												%>--%>
+
+												共[<B>${pageBean.totalSize}</B>]条记录,[<B>${pageBean.totalPage}</B>]页
 												,每页显示
 												<select name="pageSize">
 												
-												<option value="15" <c:if test="${pageSize==10 }">selected</c:if>>1</option>
+												<option value="10" <c:if test="${pageSize==10 }">selected</c:if>>10</option>
 												<option value="30" <c:if test="${pageSize==30 }">selected</c:if>>30</option>
 												</select>
 												条
@@ -129,7 +147,7 @@
 												<B>${pageBean.currentPage}</B>
 												[<A href="javascript:to_page(${pageBean.currentPage+1})">后一页</A>]
 												到
-												<input type="text" size="3" id="page" name="page" />
+												<input type="text" size="3" id="page" name="currentPage" />
 												页
 												
 												<input type="button" value="Go" onclick="to_page()"/>

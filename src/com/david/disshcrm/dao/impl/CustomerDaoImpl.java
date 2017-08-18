@@ -100,21 +100,33 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	 * 根据用户输入的内容模查询
 	 */
 	@Override
-	public List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize) {
+	public List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize, String inputCurrentPage) {
 
-		Criteria criteria = currentSession().createCriteria(Customer.class);
+		Criteria criteria = getSessionFactory().openSession().createCriteria(Customer.class);
 		// 如果筛选的条件不为空
 		if (inputCustNameValue != null && !(inputCustNameValue.trim().isEmpty())) {
 			// 添加查询条件
 			criteria.add(Restrictions.like("cust_name", "%" + inputCustNameValue + "%"));
 		}
 		//如果pageSize 为null,则默认为10
-		int pagesize = 0;
-		if (inputPageSize == null||inputPageSize.trim().equals("")) {
+		int pagesize =10;
+		if (inputPageSize == null||StringUtils.isEmpty(inputPageSize)|| inputPageSize.trim().equals("")) {
 			pagesize = 10;
 		}else {
 			pagesize = Integer.parseInt(inputPageSize);
 		}
+		//设置当前页
+		int currentPage =0;
+		if (inputCurrentPage == null||StringUtils.isEmpty(inputCurrentPage)|| inputCurrentPage.trim().equals("")) {
+			currentPage = 0;
+		}else {
+			currentPage = Integer.parseInt(inputCurrentPage);
+		}
+		//设置分页的参数。
+		//(当前页-1）*Pagesize
+		criteria.setFirstResult(currentPage);////从哪条记录开始，第几条记录=(当前页-1)*每页记录数 如（2-1）*10 如果第一页默认为0
+		criteria.setMaxResults(pagesize);
+
 		// 查询得到客户集合
 		List<Customer> lists = criteria.list();
 		return lists;

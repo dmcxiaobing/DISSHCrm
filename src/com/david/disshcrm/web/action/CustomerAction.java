@@ -48,7 +48,8 @@ public class CustomerAction extends BaseAction implements ModelDriven<Customer> 
         //得到用户筛选输入的内容
         String inputCustNameValue = super.getHttpServletRequest().getParameter("cust_name");
         String inputPageSize = super.getHttpServletRequest().getParameter("pageSize");
-        List<Customer> customers = customerService.findAllByInputValueLikePage(inputCustNameValue,inputPageSize);
+        String inputCurrentPage = super.getHttpServletRequest().getParameter("currentPage");
+        List<Customer> customers = customerService.findAllByInputValueLikePage(inputCustNameValue,inputPageSize,inputCurrentPage);
         //将列表数据转发到list.jsp中
         this.request.put("list",customers);
         this.request.put("pageBean",customerService.getPageBean(inputPageSize));

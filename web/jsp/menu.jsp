@@ -143,7 +143,7 @@ A.active {
 									</TD>
 								</TR>
 								<TR>
-									<TD background=images/new_027.jpg height=1></TD>
+									<TD background=${pageContext.request.contextPath}/source/images/new_027.jpg height=1></TD>
 								</TR>
 								<TR>
 									<TD class=mainMenu onClick="MenuDisplay('table_2');"><SPAN

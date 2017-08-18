@@ -23,11 +23,15 @@ public class PageBean<T> {
 	 * 返回总页数
 	 */
 	public int getTotalPage() {
-		//总记录数 除以 每页记录数
-		int totalPage = totalSize / pageSize;
-		//如果正好能够整除，则总页数为总页数tp,否则为tp+1
-		return totalSize % pageSize == 0 ? totalPage : totalPage + 1;
+		return totalPage;
 	}
+	//返回总页数，因为我们在CustomerDaoImpl 已经设置过了，这里直接返回结果
+//	public int getTotalPage() {
+//		//总记录数 除以 每页记录数
+//		int totalPage = totalSize / pageSize;
+//		//如果正好能够整除，则总页数为总页数tp,否则为tp+1
+//		return totalSize % pageSize == 0 ? totalPage : totalPage + 1;
+//	}
 
 
 	public void setTotalPage(Integer totalPage) {
@@ -85,4 +89,16 @@ public class PageBean<T> {
 		this.totalSize = totalSize;
 	}
 
+
+	@Override
+	public String toString() {
+		return "PageBean{" +
+				"totalPage=" + totalPage +
+				", currentPage=" + currentPage +
+				", totalSize=" + totalSize +
+				", pageSize=" + pageSize +
+				", datas=" + datas +
+				", url='" + url + '\'' +
+				'}';
+	}
 }

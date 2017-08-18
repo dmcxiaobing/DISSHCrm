@@ -15,7 +15,7 @@ public interface CustomerService {
 	List<Customer> findCustomerById(String cust_id);
 
     List<Customer> findAll();
-    List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize);
+    List<Customer> findAllByInputValueLikePage(String inputCustNameValue, String inputPageSize, String inputCurrentPage);
 
     void saveUpdate(Customer customer);
 
