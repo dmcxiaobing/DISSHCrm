@@ -1,6 +1,7 @@
 package com.david.disshcrm.common.utils;
 
 import java.util.Map;
+import java.util.UUID;
 
 import com.david.disshcrm.common.web.converter.DateConverter;
 import org.apache.commons.beanutils.BeanUtils;
@@ -36,5 +37,13 @@ public class CommonUtils {
 		
 		return null;
 		
+	}
+
+	/**
+	 * 获取一个32位的随机数 16位数字组成。并去掉“-”并且转换为大写
+	 *
+	 */
+	public static String getUUIDRandomNum() {
+		return UUID.randomUUID().toString().replace("-", "").toUpperCase();
 	}
 }

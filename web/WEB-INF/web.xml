@@ -10,6 +10,21 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 
+	<!--加载我们的log4j的配置文件，放在ContextLoaderListener之前-->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:log4j.properties</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>60000</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			org.springframework.web.util.Log4jConfigListener
+		</listener-class>
+	</listener>
 
   	<!-- 配置Spring框架整合WEB的监听器 -->
 	<listener>

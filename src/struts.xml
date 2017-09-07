@@ -40,12 +40,19 @@
         <!--配置用户的模块.这里是用户登陆的action-->
         <action name="user_*" class="userAction" method="{1}">
             <result name="login">/jsp/login.jsp</result>
+            <result name="regist">/jsp/regist.jsp</result>
             <result name="index" type="redirect">/jsp/index.jsp</result>
 
             <!-- 由于拦截器进行了拦截，所以login方法不能拦截，不然全部永远也登录不上去了 -->
             <interceptor-ref name="userInterceptor">
                 <!-- login方法不拦截 -->
-                <param name="excludeMethods">login</param>
+                <!--判断注册时输入的用户名是否可用，这里不要拦截，否则也是会进入到转发登陆界面-->
+                <!--注册的时候也不要进行拦截，不然注册不上。-->
+                <param name="excludeMethods">login,checkUsername,regist</param>
+                <!--判断注册时输入的用户名是否可用，这里不要拦截，否则也是会进入到转发登陆界面-->
+                <!--<param name="excludeMethods">checkUsername</param>-->
+                <!--注册的时候也不要进行拦截，不然注册不上。-->
+            <!--    <param name="excludeMethods">regist</param>-->
             </interceptor-ref>
             <!-- 开启默认的拦截 -->
             <interceptor-ref name="defaultStack"/>

@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
  */
 public class LogUtils {
     //创建日志对象
-    private static Logger log = Logger.getLogger(LogUtils.class);
+    public static Logger log = Logger.getLogger(LogUtils.class);
 
 
 

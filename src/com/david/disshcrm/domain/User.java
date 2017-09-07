@@ -14,7 +14,17 @@ public class User {
     private String code;//激活码
     private String uid;//主键UUID
     private String email;//邮箱
-//    @Column(name="username")
+    private int del;//是否删除，如果删除了则是1不可用，否则为0可用
+
+    public int getDel() {
+        return del;
+    }
+
+    public void setDel(int del) {
+        this.del = del;
+    }
+
+    //    @Column(name="username")
     public String getUsername() {
         return username;
     }

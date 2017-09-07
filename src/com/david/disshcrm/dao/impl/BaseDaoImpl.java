@@ -10,32 +10,19 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
-
-public class BaseDaoImpl  implements BaseDao {
+/**
+ * david
+ */
+public class BaseDaoImpl implements BaseDao {
 
     private SessionFactory sessionFactory;
+
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
+
     public Session getSession() {
         return sessionFactory.getCurrentSession();
-    }
-
-
-    //带条件查询
-    public <T> List<T> find(String hql, Class<T> entityClass, Object[] params) {
-        Query query = this.getSession().createQuery(hql);
-        if (params != null) {
-            for (int i = 0; i < params.length; i++) {
-                query.setParameter(i, params[i]);
-            }
-        }
-        return (List<T>) query.list();
-    }
-
-    //获取一条，根据主键id
-    public <T> T get(Class<T> entityClass, Serializable id) {
-        return (T) this.getSession().get(entityClass, id);
     }
 
     //分页查询，查询两次，一次查询总数，一次查询分页记录
@@ -71,6 +58,32 @@ public class BaseDaoImpl  implements BaseDao {
             this.saveOrUpdate(entity);//为什么hibernate批量操作时，要用循环一条一条记录去更新？
         }
     }
+
+    /*****************************************************/
+
+
+    //带条件查询
+    public <T> List<T> find(String hql, Class<T> entityClass, Object[] params) {
+        Query query = this.getSession().createQuery(hql);
+        if (params != null) {
+            for (int i = 0; i < params.length; i++) {
+                query.setParameter(i, params[i]);
+            }
+        }
+        return (List<T>) query.list();
+    }
+
+    //获取一条，根据主键id
+    public <T> T get(Class<T> entityClass, Serializable id) {
+        return (T) this.getSession().get(entityClass, id);
+    }
+
+
+    //新增
+    public <T> void save(T entity) {
+        this.getSession().save(entity);
+    }
+
 
     //按主键id删除
     public <T> void deleteById(Class<T> entityClass, Serializable id) {
